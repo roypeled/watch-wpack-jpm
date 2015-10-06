@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:roypeled/add-ff-exports.git"
+    "url": "git@github.com:roypeled/watch-wpack-jpm.git"
   },
   "license": "MIT",
   "bin": {
