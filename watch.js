@@ -7,12 +7,12 @@ var shell = require('shelljs');
 function run() {
 	
 	watch.watchTree('src', function (f, curr, prev) {
-		shell.exec("cd src/");
+        console.log("working on", process.cwd());
 		shell.exec("webpack");
-		shell.exec("cd ../dist/ff/");
+        process.chdir('dist/ff');
 		shell.exec("add-ff-exports");
 		shell.exec("jpm post --post-url http://localhost:8888/");
-		shell.exec("cd ../../");
+        process.chdir('../../');
 	})
 
 };
