@@ -1,0 +1,25 @@
+{
+  "name": "watch-wpack-jpm",
+  "version": "0.0.1",
+  "description": "",
+  "main": "watch.js",
+  "keywords": [],
+  "author": {
+    "name": "Roy Peled",
+    "email": "royp@folloze.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:roypeled/add-ff-exports.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "watch-wpack-jpm" : "watch.js"
+  },
+  "dependencies": {
+    "jpm": "1.0.1",
+    "add-exports": "0.0.1",
+    "watch": "0.16.0",
+    "shelljs": "0.5.3"
+  }
+}
