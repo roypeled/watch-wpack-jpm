@@ -5,7 +5,7 @@ var watch = require('watch');
 var shell = require('shelljs');
 
 function getParams(){
-	var params = {};
+    var params = {};
 
     for(var i=0; i<process.argv.length; i++){
         var val = process.argv[i];
@@ -18,23 +18,23 @@ function getParams(){
 
 function run() {
 
-	var params = getParams();
-	
-	watch.watchTree('src', function (f, curr, prev) {
+    var params = getParams();
+    
+    watch.watchTree('src', function (f, curr, prev) {
         console.log("working on", process.cwd());
-		shell.exec("webpack");
-		if(params.env = "ff"){
-        	process.chdir('dist/ff');        	
+        shell.exec("webpack");
+        if(params.env == "ff"){
+            process.chdir('dist/ff');           
         } else
-    		process.chdir('dist/src');	
+            process.chdir('dist/src');  
 
         shell.exec("add-ff-exports");
 
-        if(params.env = "ff")
-		  shell.exec("jpm post --post-url http://localhost:8888/");
-
+        if(params.env == "ff")
+          shell.exec("jpm post --post-url http://localhost:8888/");
+          
         process.chdir('../../');
-	})
+    })
 
 };
 
