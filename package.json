@@ -1,6 +1,6 @@
 {
   "name": "watch-wpack-jpm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "watch.js",
   "keywords": [],

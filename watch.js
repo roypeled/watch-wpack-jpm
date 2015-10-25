@@ -24,11 +24,15 @@ function run() {
         console.log("working on", process.cwd());
 		shell.exec("webpack");
 		if(params.env = "ff"){
-        	process.chdir('dist/ff');
-        	shell.exec("add-ff-exports");
+        	process.chdir('dist/ff');        	
         } else
-    		process.chdir('dist/src');		
-		shell.exec("jpm post --post-url http://localhost:8888/");
+    		process.chdir('dist/src');	
+
+        shell.exec("add-ff-exports");
+
+        if(params.env = "ff"){   	
+		  shell.exec("jpm post --post-url http://localhost:8888/");
+          
         process.chdir('../../');
 	})
 
