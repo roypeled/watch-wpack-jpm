@@ -30,9 +30,9 @@ function run() {
 
         shell.exec("add-ff-exports");
 
-        if(params.env = "ff"){   	
+        if(params.env = "ff")
 		  shell.exec("jpm post --post-url http://localhost:8888/");
-          
+
         process.chdir('../../');
 	})
 
