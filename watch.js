@@ -22,15 +22,16 @@ function run() {
     
     watch.watchTree('src', function (f, curr, prev) {
         console.log("working on", process.cwd());
-        shell.exec("webpack");
-        if(params.env == "ff"){
+        var env = params.env || "";
+        shell.exec("webpack env:" + env);
+        if(params.device == "ff"){
             process.chdir('dist/ff');           
         } else
             process.chdir('dist/src');  
 
         shell.exec("add-ff-exports");
 
-        if(params.env == "ff")
+        if(params.device == "ff")
           shell.exec("jpm post --post-url http://localhost:8888/");
           
         process.chdir('../../');
