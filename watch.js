@@ -23,7 +23,7 @@ function run() {
     watch.watchTree('src', function (f, curr, prev) {
         console.log("working on", process.cwd());
         var env = params.env || "";
-        shell.exec("webpack env:" + env);
+        shell.exec("webpack -env:" + env);
         if(params.device == "ff"){
             process.chdir('dist/ff');           
         } else
